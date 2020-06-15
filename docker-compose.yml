@@ -3,7 +3,7 @@ services:
     www:
         build: .
         ports: 
-            - "6001:6001"
+            - "6001:80"
         volumes:
             - ./www:/var/www/html/
         links:
@@ -31,7 +31,7 @@ services:
         links: 
             - db:db
         ports:
-            - 6000:6000
+            - 6000:80
         environment:
             MYSQL_USER: user
             MYSQL_PASSWORD: test
