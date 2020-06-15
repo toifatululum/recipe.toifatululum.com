@@ -1,0 +1,63 @@
+/*login */
+
+.login-wrapper{
+	height: 100vh; 
+	background-size: cover !important; 
+	background-repeat: no-repeat !important;
+	width: 100%;
+}
+
+.login-wrapper2{
+	height: 100vh; 
+	width: 100%;
+	padding: 30px 30px;
+}
+
+.gradient{
+	border-radius: 17px !important;
+	padding: 20px;
+	height: 100%;
+	display: flex;
+	background: linear-gradient(7.61deg, #6979F8 15.98%, #5494e282);
+}
+.login-form{
+	width: 50% !important;
+
+}
+
+.btn-primary{
+	color: #fff;
+    background-color: #261D56 !important;
+    border-color: #261D56 !important;
+}
+
+@media only screen and (max-width: 640px) {
+	.login-wrapper {
+		height: 200px !important;
+	}
+	.login-wrapper2 {
+		height: auto !important;
+	}
+
+	.login-form{
+		width: 100% !important;
+	}
+}
+#disqus_thread {
+     position: relative;
+}
+#disqus_thread:after {
+     content: "";
+     display: block;
+     height: 55px;
+     width: 100%;
+     position: absolute;
+     bottom: 0;
+     background: white;
+}
+
+.h-200{
+	height:250px;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+}
