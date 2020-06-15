@@ -3,7 +3,7 @@
 global $config;
 $config = array();
 
-define("BASE","http://159.65.141.210:6001");
+define("BASE","https://recipe.toifatululum.com/");
 define("BASEADMIN", BASE. "admin");
 define("BASEDIR", __DIR__ . '/');
 define("PUBLIC_DIR", __DIR__ . '/assets/images/uploads/');
