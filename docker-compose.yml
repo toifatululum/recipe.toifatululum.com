@@ -3,7 +3,7 @@ services:
   www:
     build: .
     ports:
-      - "6001:80"
+      - "6000:80"
     volumes:
       - ./www:/var/www/html/
     links:
@@ -31,4 +31,4 @@ services:
       PMA_ARBITRARY: 1
     restart: always
     ports:
-      - 8183:80
+      - 6001:80
