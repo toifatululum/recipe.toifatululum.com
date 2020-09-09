@@ -1,40 +1,34 @@
-version: "3.1"
+version: "3.2"
 services:
-    www:
-        build: .
-        ports: 
-            - "6001:80"
-        volumes:
-            - ./www:/var/www/html/
-        links:
-            - db
-        networks:
-            - default
-    db:
-        image: mysql:8.0
-        ports: 
-            - "3309:3306"
-        command: --default-authentication-plugin=mysql_native_password
-        environment:
-            MYSQL_DATABASE: myDb
-            MYSQL_USER: user
-            MYSQL_PASSWORD: test
-            MYSQL_ROOT_PASSWORD: test 
-        volumes:
-            - ./dump:/docker-entrypoint-initdb.d
-            - ./conf:/etc/mysql/conf.d
-            - persistent:/var/lib/mysql
-        networks:
-            - default
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin:5.0
-        links: 
-            - db:db
-        ports:
-            - 6000:80
-        environment:
-            MYSQL_USER: user
-            MYSQL_PASSWORD: test
-            MYSQL_ROOT_PASSWORD: test 
-volumes:
-    persistent:
+  www:
+    build: .
+    ports:
+      - "6001:80"
+    volumes:
+      - ./www:/var/www/html/
+    links:
+      - mysql
+    networks:
+      - default
+  mysql:
+    image: mysql:latest
+    container_name: dev_mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: default_schema
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: dev_pma
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8183:80

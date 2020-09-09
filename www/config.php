@@ -9,8 +9,8 @@ define("BASEDIR", __DIR__ . '/');
 define("PUBLIC_DIR", __DIR__ . '/assets/images/uploads/');
 define("PROJECTPATH", dirname(__DIR__) . '/html');
 
-$config['dbname']= 'myDb';
-$config['host']= 'db';
-$config['password']= 'test';
+$config['dbname']= 'default_schema';
+$config['host']= 'mysql';
+$config['password']= 'user';
 $config['dbuser']= 'user';
 
